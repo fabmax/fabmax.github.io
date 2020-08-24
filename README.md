@@ -1,4 +1,4 @@
-#fabmax.github.io
+# fabmax.github.io
 
 Repository of my [github page](https://fabmax.github.io)
 
