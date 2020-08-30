@@ -4,6 +4,9 @@
 
 Here are a few demos I made with my 3D engine. All code (engine + demos) is available on github: [https://github.com/fabmax/kool](https://github.com/fabmax/kool)
 
+- [Atmospheric Scattering](https://fabmax.github.io/kool/kool-js/?demo=atmosphereDemo): Earth (and Moon) with volumetric atmosphere.
+  Lots of interactive controls for adjusting the appearance of the atmosphere. The planet itself is rendered by a highly customized
+  deferred pbr shader with extensions for rendering the oceans and night side.
 - [Procedural Geometry](https://fabmax.github.io/kool/kool-js/?demo=proceduralDemo): Small test-case for
   procedural geometry; all geometry is generated in code (even the roses! Textures are regular images though). Also some glass
   shading (shaft of the wine glass, the wine itself looks quite odd when shaded with refractions and is therefore opaque)
