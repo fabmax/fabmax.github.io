@@ -4,9 +4,14 @@
 
 Here are a few demos I made with my 3D engine. All code (engine + demos) is available on github: [https://github.com/fabmax/kool](https://github.com/fabmax/kool)
 
-- [Physics](https://fabmax.github.io/kool/kool-js/?demo=physics): The obligatory box collision physics demo. Based on 
-  bullet physics (via [ammo.js](https://github.com/kripken/ammo.js/) on javascript / [JBullet](http://jbullet.advel.cz/)
-  on JVM). A few more notes on physics [further below](#physics-simulation).
+- [Physics - Vehicle](https://fabmax.github.io/kool/kool-js/?demo=phys-vehicle): A drivable vehicle (W, A, S, D) 
+  based on the nVidia PhysX vehicles SDK (via emscripten/WebIDL bindings:
+  [physx-js-webidl](https://github.com/fabmax/physx-js-webidl)). Still work in progress and currently does not work
+  on JVM.
+- [Physics - Joints](https://fabmax.github.io/kool/kool-js/?demo=phys-joints): Physics demo consisting of a chain
+  running over two gears. Uses a lot of multi / compound shapes and revolute / hinge joints. Based on nVidia
+  PhysX on javascript / [JBullet](http://jbullet.advel.cz/) on JVM). 
+- [Physics - Collision](https://fabmax.github.io/kool/kool-js/?demo=physics): The obligatory box collision physics demo.
 - [Atmospheric Scattering](https://fabmax.github.io/kool/kool-js/?demo=atmosphere): Earth (and Moon) with volumetric atmosphere.
   Lots of interactive controls for adjusting the appearance of the atmosphere. The planet itself is rendered by a highly customized
   deferred pbr shader with extensions for rendering the oceans and night side.
