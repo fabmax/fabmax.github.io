@@ -4,6 +4,7 @@
 
 Here are a few demos I made with my 3D engine. All code (engine + demos) is available on github: [https://github.com/fabmax/kool](https://github.com/fabmax/kool)
 
+- [Physics - Ragdoll](https://fabmax.github.io/kool/kool-js/?demo=phys-ragdoll): Ragdoll physics demo.
 - [Physics - Vehicle](https://fabmax.github.io/kool/kool-js/?demo=phys-vehicle): A drivable vehicle (W, A, S, D) 
   based on the nVidia PhysX vehicles SDK (via emscripten/WebIDL bindings:
   [physx-js-webidl](https://github.com/fabmax/physx-js-webidl)). Still work in progress and currently does not work
