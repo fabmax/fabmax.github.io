@@ -8,6 +8,8 @@ I finally released my first real game: [Blocks and Belts](https://fabmaxx.itch.i
 
 Here are a few demos I made with my 3D engine. All code (engine + demos) is available on github: [https://github.com/fabmax/kool](https://github.com/fabmax/kool)
 
+- [Physics - Terrain](https://fabmax.github.io/kool/kool-js/?demo=phys-terrain): Work-in-progress: Height-map based
+  terrain (incl. some wind-affected vegetation) + a controllable character (still quite basic and animations are awful).
 - [Physics - Ragdoll](https://fabmax.github.io/kool/kool-js/?demo=phys-ragdoll): Ragdoll physics demo.
 - [Physics - Vehicle](https://fabmax.github.io/kool/kool-js/?demo=phys-vehicle): A drivable vehicle (W, A, S, D) 
   based on the nVidia PhysX vehicles SDK (via emscripten/WebIDL bindings:
