@@ -1,5 +1,5 @@
 {
-  "nextId": 39,
+  "nextId": 41,
   "sceneNodeIds": [
     1
   ],
@@ -60,7 +60,7 @@
       "components": [
         {
           "type": "de.fabmax.kool.editor.data.MaterialComponentData",
-          "materialId": -1
+          "materialId": 39
         },
         {
           "type": "de.fabmax.kool.editor.data.TransformComponentData",
@@ -91,6 +91,12 @@
               "size": {
                 "x": 64.0,
                 "y": 64.0
+              },
+              "common": {
+                "uvScale": {
+                  "x": 32.0,
+                  "y": 32.0
+                }
               }
             }
           ]
@@ -377,7 +383,7 @@
       "components": [
         {
           "type": "de.fabmax.kool.editor.data.ModelComponentData",
-          "modelPath": "assets/models/player.glb",
+          "modelPath": "assets/models/player.glb.gz",
           "animationIndex": 2
         },
         {
@@ -554,7 +560,7 @@
         },
         {
           "type": "de.fabmax.kool.editor.data.MaterialComponentData",
-          "materialId": 17
+          "materialId": 40
         },
         {
           "type": "de.fabmax.kool.editor.data.MeshComponentData",
@@ -761,6 +767,65 @@
         "roughness": {
           "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
           "value": 0.112
+        },
+        "metallic": {
+          "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
+          "value": 0.0
+        },
+        "emission": {
+          "type": "de.fabmax.kool.editor.data.ConstColorAttribute",
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": 39,
+      "name": "ground tiles",
+      "shaderData": {
+        "type": "de.fabmax.kool.editor.data.PbrShaderData",
+        "baseColor": {
+          "type": "de.fabmax.kool.editor.data.MapAttribute",
+          "mapPath": "assets/textures/materials/tile_flat/tiles_flat_fine.png"
+        },
+        "roughness": {
+          "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
+          "value": 0.5
+        },
+        "metallic": {
+          "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
+          "value": 0.0
+        },
+        "emission": {
+          "type": "de.fabmax.kool.editor.data.ConstColorAttribute",
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        "normalMap": {
+          "mapPath": "assets/textures/materials/tile_flat/tiles_flat_fine_normal.png"
+        }
+      }
+    },
+    {
+      "id": 40,
+      "name": "uv-map",
+      "shaderData": {
+        "type": "de.fabmax.kool.editor.data.PbrShaderData",
+        "baseColor": {
+          "type": "de.fabmax.kool.editor.data.MapAttribute",
+          "mapPath": "assets/textures/uv_checker_map.png"
+        },
+        "roughness": {
+          "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
+          "value": 0.5
         },
         "metallic": {
           "type": "de.fabmax.kool.editor.data.ConstValueAttribute",
