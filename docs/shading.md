@@ -25,9 +25,9 @@ Builtin shaders provide easy-to-use masterials suitable for most standard use-ca
 All builtin shaders are written in [KSL](#ksl---kool-shading-language), the same DSL you can use to write your own custom shaders.
 
 {: .note }
-Documentation is still very basic. Most notably, `KslPbrShader` and `KslBlinnPhongShader`
-share a lot of light-related settings, which are not further described here. This will hopefully
-change soon.
+> Documentation is still very basic. Most notably, `KslPbrShader` and `KslBlinnPhongShader`
+> share a lot of light-related settings, which are not further described here. This will hopefully
+> change soon.
 
 ### KslPbrShader
 

@@ -7,6 +7,23 @@ url: https://fabmax.github.io
 aux_links:
   kool Template: https://github.com/fabmax/kool-templates
 
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
 # Footer content
 # appears at the bottom of every page's main content
 
