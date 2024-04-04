@@ -22,13 +22,12 @@ kool comes with a set of general purpose shaders as well as its own shading lang
 Builtin shaders provide easy-to-use masterials suitable for most standard use-cases.
 
 {: .note }
-> All builtin shaders are written in [KSL](#ksl---kool-shading-language), the same DSL you
-> can use to write your own custom shaders.
+All builtin shaders are written in [KSL](#ksl---kool-shading-language), the same DSL you can use to write your own custom shaders.
 
 {: .note }
-> Documentation is still very basic. Most notably, `KslPbrShader` and `KslBlinnPhongShader`
-> share a lot of light-related settings, which are not further described here. This will hopefully
-> change soon.
+Documentation is still very basic. Most notably, `KslPbrShader` and `KslBlinnPhongShader`
+share a lot of light-related settings, which are not further described here. This will hopefully
+change soon.
 
 ### KslPbrShader
 
@@ -129,9 +128,9 @@ mesh.shader = KslUnlitShader {
 ## KSL - kool shading language
 
 {: .warning }
-> KSL is quite powerful and offers pretty much the same feature set as GLSL, although the syntax is sometimes a
-> bit more complicated. However, documentation is still very much incomplete. In case you want to dive deep you
-> should take a look at the source code of the builtin shaders, to get an idea about how things work.
+KSL is quite powerful and offers pretty much the same feature set as GLSL, although the syntax is sometimes a
+bit more complicated. However, documentation is still very much incomplete. In case you want to dive deep you
+should take a look at the source code of the builtin shaders, to get an idea about how things work.
 
 Here's a minimal example for a custom KSL shader:
 
@@ -166,8 +165,8 @@ A little more complex example is available in the [HelloKsl] demo.
 ## Deferred shading
 
 {: .warning }
-> The deferred rendering pipeline is somewhat deprecated at the moment and will probably change significantly
-> in the future. Documentation is therefore very limited.
+The deferred rendering pipeline is somewhat deprecated at the moment and will probably change significantly
+in the future. Documentation is therefore very limited.
 
 So far, all discussed shaders use traditional forward rendering. Another option to do the rendering is deferred
 shading which can be cheaper and allows for more advanced lighting effects.
