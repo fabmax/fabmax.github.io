@@ -14,6 +14,8 @@ The following demos demonstrate various features of the engine. All demos run in
 
 ## kool Demos
 
+Code for all demos is available in `kool-demo` sub-project in the [kool repo][kool repo].
+
 - [Editor](https://fabmax.github.io/kool/kool-editor/): Work in progress graphical editor for this engine. Fully
   implemented within the engine itself. 
 - [Island](https://fabmax.github.io/kool/kool-js/?demo=phys-terrain): Height-map based
@@ -57,8 +59,6 @@ The following demos demonstrate various features of the engine. All demos run in
   demo of the Stanford Bunny. Uses six levels of detail to render up to 8000 instances.
 - [Mesh Simplification](https://fabmax.github.io/kool/kool-js/?demo=simplification): Interactive mesh
   simplification demo (based on traditional [error-quadrics](https://www.cs.cmu.edu/~./garland/Papers/quadrics.pdf))
-
-Code for all demos is available in `kool-demo` sub-project in the [kool repo][kool repo].
 
 ----
 

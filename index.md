@@ -8,7 +8,7 @@ description: "An OpenGL / WebGPU engine for Desktop JVM, Android and Javascript 
 # kool Documentation
 {: .fs-9 }
 
-kool is a multi-platform OpenGL / WebGPU / Vulkan game engine that works on Desktop Java, Android and in browsers.
+kool is a multi-platform OpenGL / WebGPU game engine written in kotlin that works on Desktop Java, Android and in browsers.
 {: .fs-6 .fw-300 }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
@@ -69,7 +69,7 @@ Feel free to join the [Discord Server](https://discord.gg/GvsJj2Pk3K)!
 
 kool is committed to fostering a welcoming community.
 
-[View our Code of Conduct](https://github.com/fabmax/kool/blob/main/CODE_OF_CONDUCT.md) on our GitHub repository.
+[View the Code of Conduct](https://github.com/fabmax/kool/blob/main/CODE_OF_CONDUCT.md) on our GitHub repository.
 
 ----
 
