@@ -1,46 +1,77 @@
-# Welcome to my Github page!
+---
+title: Home
+layout: default
+nav_order: 1
+description: "An OpenGL / WebGPU engine for Desktop JVM, Android and Javascript written in Kotlin."
+---
 
-Here are a few demos I made with my 3D engine. All code (engine + demos) is available on github: [https://github.com/fabmax/kool](https://github.com/fabmax/kool)
+# kool Documentation
+{: .fs-9 }
 
-## kool Demos
-- [Island](https://fabmax.github.io/kool/kool-js/?demo=phys-terrain): Height-map based
-  island incl. some wind-affected vegetation + a basic controllable character.
-- [Physics - Ragdoll](https://fabmax.github.io/kool/kool-js/?demo=phys-ragdoll): Ragdoll physics demo.
-- [Physics - Vehicle](https://fabmax.github.io/kool/kool-js/?demo=phys-vehicle): A drivable vehicle (W, A, S, D /
-  cursor keys, R to reset) based on the Nvidia PhysX vehicles SDK.
-- [Physics - Joints](https://fabmax.github.io/kool/kool-js/?demo=phys-joints): Physics demo consisting of a chain
-  running over two gears. Uses a lot of multi shapes and revolute joints.
-- [Physics - Collision](https://fabmax.github.io/kool/kool-js/?demo=physics): The obligatory collision physics demo with
-  various different shapes.
-- [Embedded UI](https://fabmax.github.io/kool/kool-js/?demo=ui): Integrated UI framework implemented completely within
-  the engine. Fast, highly customizable and easy-to-use.
-- [Creative Coding](https://fabmax.github.io/kool/kool-js/?demo=creative-coding): A few relatively simple demos
-  showcasing different techniques of generating procedural geometry.
-- [Procedural Geometry](https://fabmax.github.io/kool/kool-js/?demo=procedural): Small test-case for
-  procedural geometry; all geometry is generated in code (even the roses! Textures are regular images though). Also, some glass
-  shading (shaft of the wine glass, the wine itself looks quite odd when shaded with refractions and is therefore opaque).
-- [glTF Models](https://fabmax.github.io/kool/kool-js/?demo=gltf): Various demo models loaded from glTF / glb format
-  - Flight Helmet from [glTF sample models](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/FlightHelmet)
-  - Polly from [Blender](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/polly)
-  - Coffee Cart from [3D Model Haven]((https://3dmodelhaven.com/model/?c=appliances&m=CoffeeCart_01))
-  - Camera Model also from [3D Model Haven](https://3dmodelhaven.com/model/?c=appliances&m=CoffeeCart_01)
-  - A few feature test models also from the [glTF sample model repository](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0)
-- [Deferred Shading](https://fabmax.github.io/kool/kool-js/?demo=deferred): Thousands of dynamic
-  light sources, bloom and ambient occlusion.
-- [Screen-space Ambient Occlusion](https://fabmax.github.io/kool/kool-js/?demo=ao): Roughly based on
-  [this](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html) article by John
-  Chapman with slightly optimized sampling (also shamelessly recreated his demo scene).
-- [Screen-space Reflections](https://fabmax.github.io/kool/kool-js/?demo=ssr): A simple PBR shaded
-  model with screen-space reflections and up to four spot-lights with dynamic shadows.
-- [Physical Based Rendering](https://fabmax.github.io/kool/kool-js/?demo=pbr): Interactive PBR demo 
-  with image based lighting for various materials and environments (underlying PBR theory from
-  [this](https://learnopengl.com/PBR/Theory) awesome article series).
-- [Instanced / LOD Drawing](https://fabmax.github.io/kool/kool-js/?demo=instance): Instanced rendering
-  demo of the Stanford Bunny. Uses six levels of detail to render up to 8000 instances.
-- [Mesh Simplification](https://fabmax.github.io/kool/kool-js/?demo=simplification): Interactive mesh
-  simplification demo (based on traditional [error-quadrics](https://www.cs.cmu.edu/~./garland/Papers/quadrics.pdf))
+kool is a multi-platform OpenGL / WebGPU / Vulkan game engine that works on Desktop Java, Android and in browsers.
+{: .fs-6 .fw-300 }
 
-## Blocks and Belts
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub][kool repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
-I also made an actual game with this: [Blocks and Belts](https://fabmaxx.itch.io/blocks-and-belts).
-Give it a try (it's free)!
+---
+
+## Getting started
+
+The [kool Templates] provide the easiest way to start a clean kool project from scratch. Alternatively, you can browse
+the [sourcecode](https://github.com/fabmax/kool/tree/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo) of
+[the Demos]({% link demos.md %}) to get an impression of slightly more complex scenarios.
+
+Finally, here's a hello world example:
+
+```kotlin
+fun main() = KoolApplication { ctx ->
+    // Create and add a new scene
+    ctx.scenes += scene {
+        // Add a mouse manipulatable camera
+        defaultOrbitCamera()
+
+        // Add a spinning colored cube
+        addColorMesh {
+            generate {
+                cube {
+                    colored()
+                }
+            }
+            shader = KslPbrShader {
+                color { vertexColor() }
+                metallic(0f)
+                roughness(0.25f)
+            }
+            onUpdate {
+                transform.rotate(45f.deg * Time.deltaT, Vec3f.X_AXIS)
+            }
+        }
+
+        // Add a directional light to illuminate the scene
+        lighting.singleDirectionalLight {
+            setup(Vec3f(-1f, -1f, -1f))
+            setColor(Color.WHITE, 5f)
+        }
+    }
+}
+```
+
+### License
+
+kool is distributed by an [Apache-2.0 License](https://github.com/fabmax/kool/blob/main/LICENSE).
+
+### Get in Touch
+
+Feel free to join the [Discord Server](https://discord.gg/GvsJj2Pk3K)!
+
+### Code of Conduct
+
+kool is committed to fostering a welcoming community.
+
+[View our Code of Conduct](https://github.com/fabmax/kool/blob/main/CODE_OF_CONDUCT.md) on our GitHub repository.
+
+----
+
+[kool repo]: https://github.com/fabmax/kool
+[kool Templates]: https://github.com/fabmax/kool-templates

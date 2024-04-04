@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+title: kool Documentation
+description: An OpenGL / WebGPU engine for Desktop JVM, Android and Javascript written in Kotlin.
+theme: just-the-docs
+
+url: https://fabmax.github.io
+
+aux_links:
+  Template Repository: https://github.com/fabmax/kool-templates
