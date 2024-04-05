@@ -22,6 +22,19 @@ kool comes with a set of general purpose shaders as well as its own shading lang
 
 kool's builtin shaders provide easy-to-use materials suitable for most standard use-cases.
 
+```mermaid
+graph TD
+    A[KslBuiltinShader]
+    A --> B[KslLitShader]
+    A --> C[KslUnlitShader]
+
+    B --> D[KslPbrShader]
+    B --> E[KslBlinnPhongShader]
+  
+    style A stroke-dasharray: 5 5
+    style B stroke-dasharray: 5 5
+```
+
 Currently, there are three different builtin shaders available (described in detail further below):
 - [KslPbrShader](#kslpbrshader)
 - [KslBlinnPhongShader](#kslblinnphongshader)
@@ -34,9 +47,9 @@ All builtin shaders have a variety of configuration options, which you can use t
 typically created by a factory function, which is used to set the shader config:
 
 ```kotlin
-val shader = KslUnlitShader {
+val myShader = KslPbrShader {
     color {
-        vertexColor()
+        uniformColor(MdColor.BLUE.toLinear())
     }
 }
 ```
@@ -47,36 +60,6 @@ be changed anymore. It is however possible to change assigned values later on (t
 
 Depending on their type, shaders share several configuration options:
 
-```mermaid
-graph TD
-    A["`**KslBuiltinShader**
-    *color { ... }*
-    *pipeline { ... }*
-    *vertices { ... }*
-    `"]
-    A --> B["`**KslLitShader**
-    *normalMapping { ... }*
-    *shadow { ... }*
-    *ao { ... }*
-    *emission { ... }*
-    `"]
-    A --> C["`**KslUnlitShader**`"]
-
-    B --> D["`**KslPbrShader**
-    *metallic { ... }*
-    *roughness { ... }*
-    `"]
-    B --> E["`**KslBlinnPhongShader**
-    *metallic { ... }*
-    *roughness { ... }*
-    `"]
-  
-    style A text-align: left, stroke-dasharray: 5 5
-    style B text-align: left, stroke-dasharray: 5 5
-    style D text-align: left
-    style E text-align: left
-```
-
 ### Common options
 
 Apply to all builtin shaders.
@@ -85,7 +68,7 @@ Apply to all builtin shaders.
 The list of configuration options presented here is not exhaustive. There are a few more rather advanced
 options used for animations, morphing, etc. Try digging into the code in case you want to find out more.
 
-#### `color { ... }`
+## `color { ... }`
 {: .no_toc }
 
 Configures the color source. Color sources can be:
@@ -111,7 +94,7 @@ color {
 }
 ```
 
-#### `pipeline { ... }`
+## `pipeline { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -127,7 +110,7 @@ In most cases the default values should be fine and the pipeline block can be om
 A common case is to disable depth-testing for a certain object. This can be achieved by setting
 `depthTest = DepthCompareOp.ALWAYS` and `isWriteDepth = false`.
 
-#### `vertices { ... }`
+## `vertices { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -141,21 +124,21 @@ Configures various vertex-transform related settings.
 
 The lit shader options are all related to lighting and, hence, don't apply to `KslUnlitShader`.
 
-#### `normalMapping { ... }`
+## `normalMapping { ... }`
 {: .no_toc }
 
 *Optional block*
 
 Can be used to enable and set a material specific normal map (sometimes also referred to as bump map).
 
-#### `shadow { ... }`
+## `shadow { ... }`
 {: .no_toc }
 
 *Optional block*
 
 Can be used to enable and set one or more shadow maps.
 
-#### `ao { ... }`
+## `ao { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -166,7 +149,7 @@ the SSAO map contains the dynamic scene-specific AO component.
 
 Both AO types can be configured in this block via `materialAo { ... }` and `enableSsao()` respectively.
 
-#### `emission { ... }`
+## `emission { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -318,6 +301,12 @@ fragment stage then simply takes the color from `interStageColor` and writes it 
 
 A little more complex example is available in the [HelloKsl] demo.
 
+### Compute shaders
+
+So far, this chapter discussed only regular shaders used for drawing geometry. A different kind of shaders are compute shaders,
+which can be used to offload compute workload to the GPU. kool and KSL also support compute shaders. Examples are available
+in the [HelloCompute] and [Bee][BeeShader] demos.
+
 ## Deferred shading
 
 {: .warning }
@@ -345,3 +334,5 @@ Examples using deferred shading are [DeferredDemo], [ReflectionDemo] and the
 [DeferredDemo]: https://github.com/fabmax/kool/blob/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo/DeferredDemo.kt
 [ReflectionDemo]: https://github.com/fabmax/kool/blob/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo/ReflectionDemo.kt
 [VehicleDemo]: https://github.com/fabmax/kool/tree/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo/physics/vehicle
+[HelloCompute]: https://github.com/fabmax/kool/blob/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo/helloworld/HelloCompute.kt
+[BeeShader]: https://github.com/fabmax/kool/blob/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo/bees/GpuBees.kt
