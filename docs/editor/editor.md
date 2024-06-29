@@ -12,7 +12,15 @@ permalink: /docs/editor
 An interactive editor for creating 3D scenes, managing resources, integrating custom game logic and more.
 {: .fs-6 .fw-300 }
 
-![editor](editor.jpg)
+![editor](editor/editor.jpg)
+
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
