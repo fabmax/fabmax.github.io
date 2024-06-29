@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Shading
+nav_order: 300
 ---
 
 # Shading
@@ -44,13 +45,11 @@ Currently, there are three different builtin shaders available (described in det
 All builtin shaders are written in [KSL](#ksl---kool-shading-language), the same DSL you can use to write your own custom shaders.
 
 All builtin shaders have a variety of configuration options, which you can use to customize their behavior. Shaders are
-typically created by a factory function, which is used to set the shader config:
+typically created by a factory function, which provides the configuration API:
 
 ```kotlin
 val myShader = KslPbrShader {
-    color {
-        uniformColor(MdColor.BLUE.toLinear())
-    }
+    color { uniformColor(MdColor.BLUE.toLinear()) }
 }
 ```
 
@@ -58,7 +57,7 @@ val myShader = KslPbrShader {
 After creation, all shaders are compiled and executed directly on the GPU. This means that, after creation, basic configuration settings cannot
 be changed anymore. It is however possible to change assigned values later on (textures, colors, etc.).
 
-Depending on their type, shaders share several configuration options:
+Depending on their type, shaders share several configuration options.
 
 ### Common options
 
@@ -68,7 +67,7 @@ Apply to all builtin shaders.
 The list of configuration options presented here is not exhaustive. There are a few more rather advanced
 options used for animations, morphing, etc. Try digging into the code in case you want to find out more.
 
-## `color { ... }`
+### `color { ... }`
 {: .no_toc }
 
 Configures the color source. Color sources can be:
@@ -80,7 +79,7 @@ Configures the color source. Color sources can be:
 
 {: .note }
 Most shaders work with linear color space, while common color constants usually assume sRGB color space. Mismatching
-color spaces can result in awkward looking colors (usually either very dull or oversaturated). Use `Color.toLinear()` /
+color spaces can result in awkward looking colors (usually either very dull or dark and oversaturated). Use `Color.toLinear()` /
 `Color.toSrgb()` in such a case.
 
 It is also possible to combine multiple color sources using various blend modes:
@@ -90,11 +89,11 @@ color {
     // Use a texture as base color
     textureColor(someTexture)
     // Tint the texture by multiplying another color to it
-    uniformColor(MdColor.PINK, blendMode = ColorBlockConfig.BlendMode.Multiply)
+    uniformColor(MdColor.PINK.toLinear(), blendMode = ColorBlockConfig.BlendMode.Multiply)
 }
 ```
 
-## `pipeline { ... }`
+### `pipeline { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -110,7 +109,7 @@ In most cases the default values should be fine and the pipeline block can be om
 A common case is to disable depth-testing for a certain object. This can be achieved by setting
 `depthTest = DepthCompareOp.ALWAYS` and `isWriteDepth = false`.
 
-## `vertices { ... }`
+### `vertices { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -124,21 +123,21 @@ Configures various vertex-transform related settings.
 
 The lit shader options are all related to lighting and, hence, don't apply to `KslUnlitShader`.
 
-## `normalMapping { ... }`
+### `normalMapping { ... }`
 {: .no_toc }
 
 *Optional block*
 
 Can be used to enable and set a material specific normal map (sometimes also referred to as bump map).
 
-## `shadow { ... }`
+### `shadow { ... }`
 {: .no_toc }
 
 *Optional block*
 
 Can be used to enable and set one or more shadow maps.
 
-## `ao { ... }`
+### `ao { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -149,7 +148,7 @@ the SSAO map contains the dynamic scene-specific AO component.
 
 Both AO types can be configured in this block via `materialAo { ... }` and `enableSsao()` respectively.
 
-## `emission { ... }`
+### `emission { ... }`
 {: .no_toc }
 
 *Optional block*
@@ -238,12 +237,12 @@ mesh.shader = KslBlinnPhongShader {
 ### KslUnlitShader
 
 [`KslUnlitShader`][KslUnlitShader] is a general purpose shader, that does not incorporate any lighting model.
-Instead, the material source color (texture or vertex / instance / uniform property) is forwarded more or less
-unmodified by the fragment shader (apart from optional color-space conversion).
+Instead, the material source color is forwarded more or less unmodified by the fragment shader (apart from
+optional color-space conversion).
 
-Unlit shaders are typically used for UI overlays, or stuff like navigation grids, wireframes etc.
+Unlit shaders are typically used for UI overlays, navigation grids, wireframes etc.
 
-Assigning an unlit shader works similar to lit shaders. Since there are no light-related properties, you typically
+Assigning an unlit shader works similar to lit shaders. Since there are no light-related properties, you often
 only set the color source:
 
 ```kotlin
@@ -321,8 +320,6 @@ forward-rendering version described [above](#kslpbrshader).
 
 Examples using deferred shading are [DeferredDemo], [ReflectionDemo] and the
 [VehicleDemo]
-
-----
 
 [KslPbrShader]: https://github.com/fabmax/kool/blob/main/kool-core/src/commonMain/kotlin/de/fabmax/kool/modules/ksl/KslPbrShader.kt
 [PBR theory]: https://learnopengl.com/PBR/Theory

@@ -18,16 +18,20 @@ kool is a multi-platform OpenGL / WebGPU game engine written in kotlin that work
 
 ## Getting started
 
-The [kool Templates] provide the easiest way to start a clean kool project from scratch. Alternatively, you can browse
-the [sourcecode](https://github.com/fabmax/kool/tree/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo) of
+kool supports two development styles: Editor and code-only. The easiest way to get into things is using
+[the editor]({% link docs/editor.md %}). However, the editor is still in a rather early state and you may prefer
+the code-only way. In that case the [kool Templates] provide the easiest way to start a clean kool project from scratch.
+
+Alternatively, you can browse the
+[sourcecode](https://github.com/fabmax/kool/tree/main/kool-demo/src/commonMain/kotlin/de/fabmax/kool/demo) of
 [the Demos]({% link demos.md %}) to get an impression of slightly more complex scenarios.
 
-Finally, here's a hello world example:
+Finally, here's a complete hello world example:
 
 ```kotlin
-fun main() = KoolApplication { ctx ->
+fun main() = KoolApplication {
     // Create and add a new scene
-    ctx.scenes += scene {
+    addScene {
         // Add a mouse manipulatable camera
         defaultOrbitCamera()
 
@@ -61,17 +65,15 @@ fun main() = KoolApplication { ctx ->
 
 kool is distributed by an [Apache-2.0 License](https://github.com/fabmax/kool/blob/main/LICENSE).
 
-### Get in Touch
+### Get in touch
 
 Feel free to join the [Discord Server](https://discord.gg/GvsJj2Pk3K)!
 
-### Code of Conduct
+### Code of conduct
 
 kool is committed to fostering a welcoming community.
 
 [View the Code of Conduct](https://github.com/fabmax/kool/blob/main/CODE_OF_CONDUCT.md) on our GitHub repository.
-
-----
 
 [kool repo]: https://github.com/fabmax/kool
 [kool Templates]: https://github.com/fabmax/kool-templates
