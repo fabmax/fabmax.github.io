@@ -2,7 +2,7 @@
 layout: default
 title: Object Settings
 parent: Editor
-nav_order: 2
+nav_order: 3
 ---
 
 # Object Settings

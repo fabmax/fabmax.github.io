@@ -2,7 +2,7 @@
 layout: default
 title: Integrating Custom Code
 parent: Editor
-nav_order: 3
+nav_order: 4
 ---
 
 # Integrating Custom Code

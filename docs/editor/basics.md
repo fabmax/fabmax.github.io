@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Editor basics
+title: Editor Basics
 parent: Editor
-nav_order: 1
+nav_order: 2
 ---
 
-# Editor basics
+# Editor Basics
 {: .fs-9 .no_toc }
 
 ---
