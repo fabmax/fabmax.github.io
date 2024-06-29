@@ -19,7 +19,7 @@ kool is a multi-platform OpenGL / WebGPU game engine written in kotlin that work
 ## Getting started
 
 kool supports two development styles: Editor and code-only. The easiest way to get into things is using
-[the editor]({% link docs/editor.md %}). However, the editor is still in a rather early state and you may prefer
+[the editor]({% link docs/editor/editor.md %}). However, the editor is still in a rather early state and you may prefer
 the code-only way. In that case the [kool Templates] provide the easiest way to start a clean kool project from scratch.
 
 Alternatively, you can browse the
