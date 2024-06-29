@@ -23,7 +23,8 @@ An interactive editor for creating 3D scenes, managing resources, integrating cu
 ---
 
 ## Getting started
-[Launch the web-editor][web-editor]{: .btn .btn-purple }
+
+[Launch the web-editor][web-editor]{: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 The editor runs locally in the JVM as well as in the browser. The [web-version][web-editor] offers the one-click solution
 for getting started with the editor. However, since the web-version can't compile any code, you should use the
