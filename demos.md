@@ -45,7 +45,7 @@ the [kool repo].
 - [Physical Based Rendering] - Interactive PBR demo with image based lighting for various materials and environments (underlying PBR theory
   from [this](https://learnopengl.com/PBR/Theory) awesome article series).
 - [Instanced / LOD Drawing] - Instanced rendering demo of the Stanford Bunny. Uses six levels of detail to render up to 8000 instances.
-- [Mesh Simplification] - Interactive mesh simplification demo (based on traditional [error-quadrics](https://www.cs.cmu.edu/~./garland/Papers/quadrics.pdf))
+- [Mesh Simplification]  Interactive mesh simplification demo (based on traditional [error-quadrics](https://www.cs.cmu.edu/~./garland/Papers/quadrics.pdf))
 
 [kool repo]: https://github.com/fabmax/kool
 [Island]: https://fabmax.github.io/kool/kool-js/?demo=phys-terrain
