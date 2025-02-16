@@ -5,12 +5,12 @@ theme: just-the-docs
 url: https://fabmax.github.io
 
 aux_links:
-  kool Templates: https://github.com/fabmax/kool-templates
+  kool Templates: https://github.com/kool-engine/kool-templates
 
 # External navigation links
 nav_external_links:
   - title: kool on GitHub
-    url: https://github.com/fabmax/kool
+    url: https://github.com/kool-engine/kool
 
 callouts_level: quiet # or loud
 callouts:
